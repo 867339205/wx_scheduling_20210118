@@ -1,0 +1,120 @@
+<!--pages/yun/yun.wxml-->
+<view class="conten">
+  <view class="topall">
+    <block wx:if="{{select==0}}">
+      <view class="top" class="select" bindtap="select" data-i="0">服务器</view>
+      <view class="top" bindtap="select" data-i="1">作业</view>
+    </block>
+    <block wx:else>
+      <view class="top" bindtap="select" bindtap="select" data-i="0">服务器</view>
+      <view class="top" class="select" bindtap="select" data-i="1">作业</view>
+    </block>
+  </view>
+  <view class="clear"></view>
+
+  <!--详细-->
+  <view>
+    <!--服务器-->
+    <block wx:if="{{select==0}}">
+       <view class="look">
+        <view class="time">{{time/1000}}s</view>
+        <block wx:if="{{stop==0}}">
+          <button class="stop" type="primary" bindtap="stop">暂停</button>
+        </block>
+        <block wx:else>
+          <button class="stop" type="primary"  bindtap="stop">开始</button>
+        </block>
+      </view>
+      <view class="form">
+        <form bindsubmit="submit">
+          <input class="first" name="first" type='number'></input>
+          <view class="first_i">个服务器</view>
+          <input class="second" name="second" type='number'></input>
+          <view class="second_i">核</view>
+          <button form-type='submit' class="button" type="primary">添加</button>
+        </form>
+      </view>
+      <view class="clear"></view>
+
+      <!--服务器详细-->
+      <block wx:for="{{server}}">
+        <view class="server_i">
+          <block wx:if="{{item.over==1}}">
+            <view class="server_i_first">服务器【{{item.order}}】：拥有{{item.nutnum}}核，正在运行中！</view>
+          </block>
+          <block wx:else>
+            <view class="server_i_first">服务器【{{item.order}}】：拥有{{item.nutnum}}核，已经结束运行！</view>
+          </block>
+
+          <block wx:for="{{item.nut}}">
+            <view class="nut">
+              <view class="nut_i">第{{item.order}}个核</view>
+              <view class="works">已经完成：
+                <block wx:for="{{item.olds}}">
+                  <text>作业({{item}})--></text>
+                </block>
+              </view>
+              <block wx:if="{{item.over==1}}">
+                <view class="works">
+                  正在执行：作业({{item.news}})
+                </view>
+              </block>
+              <block wx:else>
+                <view class="works">
+                  没有正在执行的作业
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </block>
+    </block>
+
+    <!--作业-->
+    <block wx:else>
+      <view class="look">
+        <view class="time">{{time/1000}}s</view>
+        <block wx:if="{{stop==0}}">
+          <button class="stop" type="primary" bindtap="stop">暂停</button>
+        </block>
+        <block wx:else>
+          <button class="stop" type="primary"  bindtap="stop">开始</button>
+        </block>
+      </view>
+
+      <view class="clear"></view>
+      <view class="form">
+        <form bindsubmit="submit_work">
+          <input class="first" name="first" type='number'></input>
+          <view class="first_i">个作业</view>
+          <input class="second" name="second" type='number'></input>
+          <view class="second_i">秒钟</view>
+          <button form-type='submit' class="button" type="primary">添加</button>
+        </form>
+      </view>
+      <view class="clear"></view>
+
+      <!--作业完成情况-->
+      <block wx:for="{{work_do}}">
+        <view class="work">
+          <view class="work_i">作业{{item.order}}:需要时间:{{item.time}}ms,完成情况如下：</view>
+           <slider  min="0" max="100" value="{{item.over}}" disabled='true'/>
+        </view>
+      </block>
+      <block wx:for="{{work_sort}}">
+        <view class="work">
+          <view class="work_i">作业{{item.order}}:需要时间:{{item.time}}ms,完成情况如下：</view>
+           <slider  min="0" max="100" value="{{item.over}}" disabled='true'/>
+        </view>
+      </block>
+       <block wx:for="{{work_old}}">
+        <view class="work">
+          <view class="work_i">作业{{item.order}}:需要时间:{{item.time}}ms,完成情况如下：</view>
+           <slider  min="0" max="100" value="{{item.over}}" disabled='true'/>
+        </view>
+      </block>
+    </block>
+
+
+  </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/yun/yun"
+  
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#3aa6ff",
+    "navigationBarTextStyle": "white"
+   
+  }
+}

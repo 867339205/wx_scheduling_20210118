@@ -1,0 +1,146 @@
+/* pages/yun/yun.wxss */
+.conten{
+  overflow: hidden;
+  margin-top:320rpx;
+}
+.topall{
+    position: fixed;
+    z-index: 99;
+   top:0rpx;
+   height: 320rpx;
+   background: #fff;
+}
+.top{
+  
+height:80rpx;
+line-height: 80rpx;
+width:371rpx;
+float:left;
+border:2rpx solid #888;
+border-top:0rpx;
+color:#555;
+text-align: center;
+font-size: 30rpx;
+
+
+}
+.clear{
+  clear:both;
+}
+.select{
+  background-color:#b4ddff;
+  color:#222;
+  height:80rpx;
+line-height: 80rpx;
+width:371rpx;
+float:left;
+border:2rpx solid #888;
+border-top:0rpx;
+text-align: center;
+font-size: 32rpx;
+}
+.first,.second,.first_i,.second_i{
+  float:left;
+  color:#222;
+  
+}
+.first,.second{
+  width:150rpx;
+  border-bottom: 2rpx solid #222;
+  text-align: center;
+}
+.form{
+  z-index: 99;
+  top:200rpx;
+   position: fixed;
+  overflow: hidden;
+  padding:30rpx;
+  width:100%;
+
+  border-bottom:1rpx solid #888;
+}
+.button{
+  margin-left:50rpx;
+  
+  float:left;
+  width:120rpx;
+  height:60rpx;
+
+  color:#222;
+
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+.server_i_first{
+  margin:15rpx;
+  
+  color:#222;
+  text-align: center;
+ 
+}
+.server_i{
+  padding-bottom:20rpx;
+ border-bottom:1rpx solid #888;
+  overflow: hidden;
+}
+.nut{
+  padding-left:50rpx;
+}
+.nut_i{
+  padding-top:10rpx;
+  color:#3aa6ff;
+  font-size: 35rpx;
+}
+.nut .works{
+  font-size:30rpx;
+  color:#555;
+  }
+
+  .time{
+   width:80rpx;
+   height:80rpx;
+   border-radius: 80rpx;
+   border:1rpx solid #3aa6ff;
+   color:#999;
+   text-align: center;
+   line-height: 75rpx;
+   float:left;
+   margin:20rpx;
+   font-size: 30rpx;
+   margin-left:60rpx;
+  }
+  .stop{
+     margin-left:50rpx;
+  
+  width:120rpx;
+  height:60rpx;
+
+  color:#222;
+
+  font-size: 26rpx;
+  line-height: 60rpx;
+  float:right;
+  margin:30rpx;
+  margin-bottom:20rpx;
+  margin-right:60rpx;
+  }
+  .look{
+    z-index: 99;
+    width:100%;
+
+    position: fixed;
+    top:80rpx;
+    border-bottom:1rpx solid #888;
+    overflow: hidden;
+  }
+  .work_i{
+    font-size: 35rpx;
+    color:#333;
+    text-align: center;
+    margin:10rpx 0;
+    margin-bottom:50rpx;
+  }
+  .work{
+    padding-bottom:20rpx;
+    border-bottom:1rpx solid #888;
+  }
